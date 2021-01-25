@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const db = require("./db");
 const dbHelpers = require("./models")(db);
+const dataHelpers = require("./routes/dataHelpers")();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -19,8 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", indexRouter);
-app.use("/api/users", usersRouter(dbHelpers));
-app.use("/api/signup", signupRouter(dbHelpers));
-app.use("/api/signin", signinRouter(dbHelpers));
+app.use("/api/users", usersRouter({ ...dbHelpers, ...dataHelpers }));
+app.use("/api/signup", signupRouter({ ...dbHelpers, ...dataHelpers }));
+app.use("/api/signin", signinRouter({ ...dbHelpers, ...dataHelpers }));
 
 module.exports = app;

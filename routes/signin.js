@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-module.exports = ({ getByUsername }) => {
+module.exports = ({ getByUsername, jwtGenerate }) => {
   router.post("/", function (req, res) {
     const loginInfo = {
       username: req.body.username,
@@ -16,14 +16,8 @@ module.exports = ({ getByUsername }) => {
           .compare(loginInfo.password, user.password)
           .then((result) => {
             if (result) {
-              // res.json({ msg: `Correct username password` });
-              const payload = { username: user.username };
-              jwt.sign(
-                payload,
-                process.env.jwtSecret,
-                { expiresIn: "1h" },
-                (err, token) =>
-                  res.json({ msg: `Correct username password`, token })
+              jwtGenerate(user.username, (err, token) =>
+                res.json({ user, token })
               );
             } else {
               res.json({ msg: "Wrong username OR password " });
