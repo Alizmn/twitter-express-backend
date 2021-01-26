@@ -15,6 +15,25 @@ with a well-formed and expandable API. The API adheres to REST standards with fo
 - Jest
   - supertest
 
+## HIERARCHY
+
+```bash
+-__tests__          <--- test scripts using jest
+-bin
+-db
+  -config
+  -schema           <--- the database scheme and tables
+  -seeds            <--- initial values for database
+  index.js          <--- it would run the database server
+  reset.js          <--- it would reset the database
+-models             <--- refered as dbHelpers, is a set of function for separating querry from the logic
+-routes
+  -dataHelpers      <--- a set of functions to manipulate the data
+  -index            <---|
+  -signin           <---|-- api routes
+  -signup           <---|
+```
+
 ## SETUP
 
 ### PREREQUISITE
@@ -41,11 +60,13 @@ cp .env.example .env
 
 - To run the program in dev mode enter `npm run dev`, it will refresh anytime you save or change any files
   !["Screenshot of run"](https://github.com/alizmn/twitter-express-backend/blob/master/image/run.png?raw=true)
+- If you need to reset database in development mode you can run `npm run db:reset`
 
 ### TEST
 
 - To run the test enter `npm test`. Note that, it won't affect your developement database and can be run simultaneously
   !["Screenshot of tests"](https://github.com/alizmn/twitter-express-backend/blob/master/image/testing.png?raw=true)
+- Everytime you run the test, it would reset the test database
 
 ### ROUTES
 
@@ -90,6 +111,7 @@ The token, should be provided in the header, as an `Authorization` attribute in 
 
 ## FEATURES
 
-- [x] User registration using unique username and a password
+✔️ User registration using unique username and a password
+
 - [x] User login (Including session maintenance by jwt)
 - [x] Unit tests
