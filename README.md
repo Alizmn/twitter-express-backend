@@ -40,8 +40,50 @@ cp .env.example .env
 ### START
 
 - To run the program in dev mode enter `npm run dev`, it will refresh anytime you save or change any files
+  !["Screenshot of run"](https://github.com/alizmn/twitter-express-backend/blob/master/image/run.png?raw=true)
 
 ### TEST
 
 - To run the test enter `npm test`. Note that, it won't affect your developement database and can be run simultaneously
   !["Screenshot of tests"](https://github.com/alizmn/twitter-express-backend/blob/master/image/testing.png?raw=true)
+
+### ROUTES
+
+Currently there are two active routes:
+
+- `/api/signup`
+  Sign up is for registering new user and accept an object with username and password for example:
+
+```javascript
+{
+  username: "John",
+  password: "VeryComplexPassword"
+}
+```
+
+As a response, you can expect status of `200 OK` if it is succesful or and detailed error message. Also it provides a token which by default is valid for 1 hour and keep you loged in. Example of successful response:
+
+```javascript
+{
+  msg: "Created successfully",
+  id: 24,
+  username: "John",
+  password: "$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai",
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFtaXIzMDAyMDAwMCIsImlhdCI6MTYxMTY5OTcxNywiZXhwIjoxNjExNzAzMzE3fQ.Rjpc9wpjXvHIlNwBAZOtNUZl4XeEBCxCA288L7ns-is"
+}
+```
+
+The token, should be provided in the header, as an `Authorization` attribute in order to be recognized.
+
+- `/api/signin`
+  Sign in would accept a valid username and password as an object(same as sign up) and provides appropriate response. A successful response woul be like:
+
+```javascript
+{
+  msg: "Login successful",
+  id: 24,
+  username: "Amir30020000",
+  password: "$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai",
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFtaXIzMDAyMDAwMCIsImlhdCI6MTYxMTcwMDA0NCwiZXhwIjoxNjExNzAzNjQ0fQ.rHL48VDVIZyxxDW5yNvHFGWasQmerza-zF0W7e2TFiM"
+}
+```
