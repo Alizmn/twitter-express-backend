@@ -9,9 +9,7 @@ module.exports = () => {
       {
         expiresIn: process.env.jwtExpire,
       },
-      function (err, token) {
-        callBack(err, token);
-      }
+      (err, token) => callBack(err, token)
     );
   };
 
