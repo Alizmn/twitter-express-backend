@@ -52,7 +52,7 @@ cp .env.example .env
 Currently there are two active routes:
 
 - `/api/signup`<br/>
-  Sign up is for registering new user and accept an object with username and password for example:
+  Sign up is for registering new user and accept an object with username and password. For example:
 
 ```javascript
 {
@@ -76,14 +76,20 @@ As a response, you can expect status of `200 OK` if it is succesful or and detai
 The token, should be provided in the header, as an `Authorization` attribute in order to be recognized.
 
 - `/api/signin`<br/>
-  Sign in would accept a valid username and password as an object(same as sign up) and provides appropriate response. A successful response woul be like:
+  Sign in would accept a valid username and password as an object (same as sign up) and provides appropriate response. A successful response would be like:
 
 ```javascript
 {
   msg: "Login successful",
   id: 24,
-  username: "Amir30020000",
+  username: "John",
   password: "$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai",
   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFtaXIzMDAyMDAwMCIsImlhdCI6MTYxMTcwMDA0NCwiZXhwIjoxNjExNzAzNjQ0fQ.rHL48VDVIZyxxDW5yNvHFGWasQmerza-zF0W7e2TFiM"
 }
 ```
+
+## FEATURES
+
+- [x] User registration using unique username and a password
+- [x] User login (Including session maintenance by jwt)
+- [x] Unit tests
