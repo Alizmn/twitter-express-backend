@@ -82,7 +82,7 @@ Currently there are two active routes:
 }
 ```
 
-As a response, you can expect status of `200 OK` if it is succesful or and detailed error message. Also it provides a token which by default is valid for 1 hour and keep you loged in. Example of successful response:
+As a response, you can expect status of `200 OK` if it is successful or and detailed error message. Also it provides a token which by default is valid for 1 hour and keep you logged in. Example of successful response:
 
 ```javascript
 {
