@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "db:reset": "node ./db/reset.js",
-    "test": "jest"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --forceExit",
+    "pretest": "cross-env NODE_ENV=test npm run db:reset"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -20,10 +21,15 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "pg": "^8.5.1",
-    "pg-native": "^3.0.0"
+    "pg-hstore": "^2.3.3",
+    "pg-native": "^3.0.0",
+    "sequelize": "^6.4.0",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
+    "http": "0.0.1-security",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "supertest": "^6.1.3"

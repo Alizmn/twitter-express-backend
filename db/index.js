@@ -1,13 +1,15 @@
 const pg = require("pg");
 require("dotenv").config();
+const env = process.env.NODE_ENV || "development";
+const config = require("./config/config")[env];
 
-const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?sslmode=disable`;
+const connectionString = `postgres://${config.user}:${config.pass}@${config.host}:${config.port}/${config.dbName}?sslmode=disable`;
 
 const client = new pg.Client({
   connectionString: connectionString || process.env.DATABASE_URL,
 });
 
-console.log(`Connected to ${process.env.DB_NAME} on ${process.env.DB_HOST}`);
+console.log(`Connected to ${config.dbName} on ${config.host} in ${env} mode`);
 client.connect();
 
 module.exports = client;
