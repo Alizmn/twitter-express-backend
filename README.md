@@ -51,7 +51,7 @@ cp .env.example .env
 
 Currently there are two active routes:
 
-- `/api/signup`
+- `/api/signup`<br/>
   Sign up is for registering new user and accept an object with username and password for example:
 
 ```javascript
@@ -75,7 +75,7 @@ As a response, you can expect status of `200 OK` if it is succesful or and detai
 
 The token, should be provided in the header, as an `Authorization` attribute in order to be recognized.
 
-- `/api/signin`
+- `/api/signin`<br/>
   Sign in would accept a valid username and password as an object(same as sign up) and provides appropriate response. A successful response woul be like:
 
 ```javascript
