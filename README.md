@@ -42,6 +42,7 @@ It's just a backend with a well-formed and expandable API. The API adheres to RE
   More [info](https://nodejs.org/en/) for installation.
 - PostgreSQL<br/>
   More [info](https://www.postgresql.org/docs/) for installation.
+- It is highly suggested to have **Insomnia** or **Postman** for evaluating the api
 
 ### INITIALIZATION
 
