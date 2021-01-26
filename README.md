@@ -5,10 +5,10 @@ It's just a backend with a well-formed and expandable API. The API adheres to RE
 
 ## TECH STACKS
 
-!["node"](https://github.com/alizmn/twitter-express-backend/blob/master/image/node.webp?raw=true)
-!["express"](https://github.com/alizmn/twitter-express-backend/blob/master/image/express.jpeg?raw=true)
-!["psql"](https://github.com/alizmn/twitter-express-backend/blob/master/image/psql.jpeg?raw=true)
-!["jest"](https://github.com/alizmn/twitter-express-backend/blob/master/image/jest.png?raw=true)
+!["node"](https://github.com/alizmn/twitter-express-backend/blob/master/image/node.webp=250x)
+!["express"](https://github.com/alizmn/twitter-express-backend/blob/master/image/express.jpeg?=250x)
+!["psql"](https://github.com/alizmn/twitter-express-backend/blob/master/image/psql.jpeg?=250x)
+!["jest"](https://github.com/alizmn/twitter-express-backend/blob/master/image/jest.png?=250x)
 
 - Node.js
   - bcrypt
