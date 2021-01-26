@@ -19,9 +19,9 @@ with a well-formed and expandable API. The API adheres to REST standards with fo
 
 ### PREREQUISITE
 
-- Node.js
+- Node.js<br/>
   More [info](https://nodejs.org/en/) for installation.
-- PostgreSQL
+- PostgreSQL<br/>
   More [info](https://www.postgresql.org/docs/) for installation.
 
 ### INITIALIZATION
@@ -43,4 +43,4 @@ cp .env.example .env
 
 ### TEST
 
-- To run the test enter `npm test`. NOTE: It won't affect your developement database and can be run simultaneously
+- To run the test enter `npm test`. Note that, it won't affect your developement database and can be run simultaneously
