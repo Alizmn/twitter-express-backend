@@ -1,5 +1,6 @@
 const pg = require("pg");
 require("dotenv").config();
+// env and config here provided to separate testing and developement database
 const env = process.env.NODE_ENV || "development";
 const config = require("./config/config")[env];
 

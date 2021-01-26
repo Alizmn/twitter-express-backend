@@ -24,18 +24,22 @@ module.exports = ({
         .then((user) => {
           if (!user) {
             bcrypt.hash(req.body.password, 10, (err, hash) => {
-              newUser.password = hash;
-              addUser(newUser.username, newUser.password)
-                .then((data) => {
-                  jwtGenerate(data.username, (err, token) => {
-                    if (err) {
-                      return alert(res, 409, null, { err });
-                    } else {
-                      return alert(res, 200, 5, { ...data, token });
-                    }
-                  });
-                })
-                .catch((err) => res.send(err));
+              if (err) {
+                alert(res, 406, null, { err });
+              } else {
+                newUser.password = hash;
+                addUser(newUser.username, newUser.password)
+                  .then((data) => {
+                    jwtGenerate(data.username, (err, token) => {
+                      if (err) {
+                        return alert(res, 409, null, { err });
+                      } else {
+                        return alert(res, 200, 5, { ...data, token });
+                      }
+                    });
+                  })
+                  .catch((err) => alert(res, 401, null, { err }));
+              }
             });
           } else {
             alert(res, 401, 4);
