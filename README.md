@@ -5,11 +5,6 @@ It's just a backend with a well-formed and expandable API. The API adheres to RE
 
 ## TECH STACKS
 
-!["node"](https://github.com/alizmn/twitter-express-backend/blob/master/image/node.webp=50x)
-!["express"](https://github.com/alizmn/twitter-express-backend/blob/master/image/express.jpeg?=50x)
-!["psql"](https://github.com/alizmn/twitter-express-backend/blob/master/image/psql.jpeg?=50x)
-!["jest"](https://github.com/alizmn/twitter-express-backend/blob/master/image/jest.png?=50x)
-
 - Node.js
   - bcrypt
   - JSON Web Tokens
