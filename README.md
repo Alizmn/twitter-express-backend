@@ -44,3 +44,4 @@ cp .env.example .env
 ### TEST
 
 - To run the test enter `npm test`. Note that, it won't affect your developement database and can be run simultaneously
+  !["Screenshot of tests"](https://github.com/alizmn/twitter-express-backend/blob/master/image/testing.png?raw=true)
