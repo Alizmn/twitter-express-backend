@@ -9,6 +9,7 @@ const johnTheEmpty = { username: "", password: "" };
 let token;
 
 describe("Signup Endpoints", () => {
+  // be carefull not excluding this test in order to have the required token!
   it("should create a new user and return the token", async () => {
     const res = await request(server).post("/api/signup").send(john);
     token = res.body.token;
