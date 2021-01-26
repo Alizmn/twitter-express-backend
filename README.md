@@ -1,9 +1,14 @@
 # TWITTER-BACKEND-EXPRESS
 
-This is an application similar to Twitter BUT without any user interface (front-end, client, ...), just a backend
-with a well-formed and expandable API. The API adheres to REST standards with focus on completing the basic functionality.
+This is an application similar to Twitter BUT without any user interface (front-end, client, ...).</br>
+It's just a backend with a well-formed and expandable API. The API adheres to REST standards with focus on completing the basic functionality.
 
 ## TECH STACKS
+
+!["node"](https://github.com/alizmn/twitter-express-backend/blob/master/image/node.webp?raw=true)
+!["express"](https://github.com/alizmn/twitter-express-backend/blob/master/image/express.jpeg?raw=true)
+!["psql"](https://github.com/alizmn/twitter-express-backend/blob/master/image/psql.jpeg?raw=true)
+!["jest"](https://github.com/alizmn/twitter-express-backend/blob/master/image/jest.png?raw=true)
 
 - Node.js
   - bcrypt
@@ -22,7 +27,7 @@ with a well-formed and expandable API. The API adheres to REST standards with fo
 -bin
 -db
   -config
-  -schema           <--- the database scheme and tables
+  -schema           <--- the database schema and tables
   -seeds            <--- initial values for database
   index.js          <--- it would run the database server
   reset.js          <--- it would reset the database
@@ -111,6 +116,6 @@ The token, should be provided in the header, as an `Authorization` attribute in 
 
 ## FEATURES
 
-✔️ User registration using unique username and a password
-✔️ User login (Including session maintenance by jwt)
+✔️ User registration using unique username and a password</br>
+✔️ User login (Including session maintenance by jwt)</br>
 ✔️ Unit tests
