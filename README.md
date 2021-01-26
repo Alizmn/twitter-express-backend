@@ -26,8 +26,8 @@ with a well-formed and expandable API. The API adheres to REST standards with fo
   -seeds            <--- initial values for database
   index.js          <--- it would run the database server
   reset.js          <--- it would reset the database
--models             <--- refered as dbHelpers, is a set of function for separating querry from the logic
--routes
+-models             <--- refered as dbHelpers, is a set of function
+-routes                                       for separating querry from the logic
   -dataHelpers      <--- a set of functions to manipulate the data
   -index            <---|
   -signin           <---|-- api routes
@@ -112,6 +112,5 @@ The token, should be provided in the header, as an `Authorization` attribute in 
 ## FEATURES
 
 ✔️ User registration using unique username and a password
-
-- [x] User login (Including session maintenance by jwt)
-- [x] Unit tests
+✔️ User login (Including session maintenance by jwt)
+✔️ Unit tests
