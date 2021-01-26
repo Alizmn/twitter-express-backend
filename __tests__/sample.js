@@ -1,9 +1,3 @@
-// describe("Sample Test", () => {
-//   it("should test that true === true", () => {
-//     expect(true).toBe(true);
-//   });
-// });
-
 const request = require("supertest");
 const app = require("../app");
 const http = require("http");
@@ -35,7 +29,7 @@ describe("Signup Endpoints", () => {
       .set("authorization", token)
       .send(johnTheEmpty);
     expect(res.body.msg).toEqual(
-      "You are already logged in as John. If you want to use another account please signout first."
+      "You are already logged in! If you want to use another account please signout first."
     );
   });
 });
@@ -60,7 +54,7 @@ describe("Signin Endpoints", () => {
       .set("authorization", token)
       .send(johnTheEmpty);
     expect(res.body.msg).toEqual(
-      "You are already logged in as John. If you want to use another account please signout first."
+      "You are already logged in! If you want to use another account please signout first."
     );
   });
 });

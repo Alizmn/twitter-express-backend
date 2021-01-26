@@ -2,15 +2,19 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 
-module.exports = ({ getByUsername, addUser, jwtDecode, jwtGenerate }) => {
+module.exports = ({
+  getByUsername,
+  addUser,
+  jwtDecode,
+  jwtGenerate,
+  alert,
+}) => {
   router.post("/", async function (req, res) {
     if (req.header("Authorization")) {
       const verifyInfo = await jwtDecode(req);
       verifyInfo.err
-        ? res.json({ msg: verifyInfo.err })
-        : res.json({
-            msg: `You are already logged in as ${verifyInfo.username}. If you want to use another account please signout first.`,
-          });
+        ? alert(res, 409, null, { err: verifyInfo.err })
+        : alert(res, 400, 1);
     } else if (req.body.username && req.body.password) {
       const newUser = {
         username: req.body.username,
@@ -25,25 +29,21 @@ module.exports = ({ getByUsername, addUser, jwtDecode, jwtGenerate }) => {
                 .then((data) => {
                   jwtGenerate(data.username, (err, token) => {
                     if (err) {
-                      return res.json({ err });
+                      return alert(res, 409, null, { err });
                     } else {
-                      return res.json({
-                        msg: "Created successfully",
-                        ...data,
-                        token,
-                      });
+                      return alert(res, 200, 5, { ...data, token });
                     }
                   });
                 })
                 .catch((err) => res.send(err));
             });
           } else {
-            res.json({ msg: "Username already in use" });
+            alert(res, 401, 4);
           }
         })
-        .catch((err) => res.send(err));
+        .catch((err) => alert(res, 417, null, { err }));
     } else {
-      res.json({ msg: "Please enter a value for username/password" });
+      alert(res, 401, 3);
     }
   });
   return router;

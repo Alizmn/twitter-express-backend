@@ -4,15 +4,13 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-module.exports = ({ getByUsername, jwtGenerate, jwtDecode }) => {
+module.exports = ({ getByUsername, jwtGenerate, jwtDecode, alert }) => {
   router.post("/", async function (req, res) {
     if (req.header("Authorization")) {
       const verifyInfo = await jwtDecode(req);
       verifyInfo.err
-        ? res.json({ msg: verifyInfo.err })
-        : res.json({
-            msg: `You are already logged in as ${verifyInfo.username}. If you want to use another account please signout first.`,
-          });
+        ? alert(res, 409, null, { err: verifyInfo.err })
+        : alert(res, 400, 1);
     } else if (req.body.username && req.body.password) {
       const loginInfo = {
         username: req.body.username,
@@ -27,27 +25,23 @@ module.exports = ({ getByUsername, jwtGenerate, jwtDecode }) => {
                 if (result) {
                   jwtGenerate(user.username, (err, token) => {
                     if (err) {
-                      return res.json({ err });
+                      return alert(res, 409, null, { err });
                     } else {
-                      return res.json({
-                        msg: "Login successful",
-                        ...user,
-                        token,
-                      });
+                      return alert(res, 200, 0, { ...user, token });
                     }
                   });
                 } else {
-                  res.json({ msg: "Wrong username OR password" });
+                  alert(res, 401, 2);
                 }
               })
-              .catch((err) => res.json({ err }));
+              .catch((err) => alert(res, 409, null, { err }));
           } else {
-            res.json({ msg: "Wrong username OR password" });
+            alert(res, 401, 2);
           }
         })
-        .catch((err) => res.json({ err }));
+        .catch((err) => alert(res, 417, null, { err }));
     } else {
-      res.json({ msg: "Please enter a value for username/password" });
+      alert(res, 401, 3);
     }
   });
   return router;
