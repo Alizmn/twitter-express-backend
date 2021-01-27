@@ -56,6 +56,15 @@ cp .env.example .env
 
 - Be carefull to add `.env` to the `.gitignore` file
 - Enter the required data from your database into `.env` file and save it!
+- NOTE: mock data in database are :
+
+```javascript
+    username: 'Mario', password: 'test3'
+    username: 'Luigi', password: 'test3'
+    username: 'Prince', password: 'test3'
+    username: 'Princess', password: 'test3'
+    username: 'Donkey', password: 'test3'
+```
 
 ### START
 
