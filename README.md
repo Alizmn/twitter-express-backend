@@ -85,7 +85,7 @@ Active routes:
 
 ### `POST: /api/signup`
 
-Sign up is for registering new user and accept an object with username and password. For example:
+Sign up is for registering new user and accepts an object with username and password. For example:
 
 ```javascript
 {
@@ -94,7 +94,7 @@ Sign up is for registering new user and accept an object with username and passw
 }
 ```
 
-As a response, you can expect status of `200 OK` if it is successful or and detailed error message. Also it provides a token which by default is valid for 1 hour and keep you logged in. Example of successful response:
+As a response, you can expect status of `200 OK` if it is successful or detailed error message. Also it provides a token which by default is valid for 1 hour and keep you logged in. Example of successful response:
 
 ```javascript
 {
@@ -106,7 +106,7 @@ As a response, you can expect status of `200 OK` if it is successful or and deta
 }
 ```
 
-The token, should be provided in the header, as an `Authorization` attribute in order to be recognized.
+**_The token, should be provided in the header, as an `Authorization` attribute in order to be recognized._**
 
 ### `POST: /api/signin`<br/>
 
