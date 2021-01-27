@@ -1,8 +1,8 @@
 INSERT INTO
 users(username, password)
 VALUES
-    ('Mario', 'test'),
-    ('Luigi', 'test'),
-    ('Princess', 'test'),
-    ('Princess', 'test'),
-    ('Donkey', 'test');
+    ('Mario', '$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai'),
+    ('Luigi', '$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai'),
+    ('Princess', '$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai'),
+    ('Princess', '$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai'),
+    ('Donkey', '$2b$10$CYFOa1SvGtPPvawzRsZitO.NEZOLpFyeW0k.lH/SDqMtAIFHx7Fai');

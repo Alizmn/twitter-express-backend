@@ -39,6 +39,7 @@ module.exports = () => {
       "Please enter a value for username/password",
       "Username already in use",
       "Created successfully",
+      "Please log in to see your tweets",
     ];
     if (data && (message || message === 0)) {
       return response.status(statusCode).json({ msg: msg[message], ...data });
