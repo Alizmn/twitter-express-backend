@@ -71,9 +71,9 @@ cp .env.example .env
 
 ### ROUTES
 
-Currently there are two active routes:
+Currently there are three active routes:
 
-- `/api/signup`<br/>
+- `POST: /api/signup`<br/>
   Sign up is for registering new user and accept an object with username and password. For example:
 
 ```javascript
@@ -97,7 +97,7 @@ As a response, you can expect status of `200 OK` if it is successful or and deta
 
 The token, should be provided in the header, as an `Authorization` attribute in order to be recognized.
 
-- `/api/signin`<br/>
+- `POST: /api/signin`<br/>
   Sign in would accept a valid username and password as an object (same as sign up) and provides appropriate response. A successful response would be like:
 
 ```javascript
@@ -110,8 +110,31 @@ The token, should be provided in the header, as an `Authorization` attribute in 
 }
 ```
 
+- `GET: /api`<br/>
+  If you are logged in (for logging in you need to have the token in your header, as mentioned before) you would see your own tweets and whether they're edited or not. For example:
+  ```javascript
+  {
+  "0": {
+    "id": 1,
+    "tweet": "best tweet",
+    "edited": false
+  },
+  "1": {
+    "id": 2,
+    "tweet": "Average tweet",
+    "edited": false
+  },
+  "2": {
+    "id": 3,
+    "tweet": "Not too bad tweet",
+    "edited": false
+  }
+  }
+  ```
+
 ## FEATURES
 
 ✔️ User registration using unique username and a password</br>
 ✔️ User login (Including session maintenance by jwt)</br>
-✔️ Unit tests
+✔️ Unit tests</br>
+✔️ Read tweets</br>

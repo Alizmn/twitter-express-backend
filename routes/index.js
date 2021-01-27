@@ -14,12 +14,12 @@ module.exports = ({ jwtDecode, alert, getTweetsByUsername }) => {
           if (tweets.length > 0) {
             alert(res, 200, null, { ...tweets });
           } else {
-            alert(res, 200, null, { msg: "No tweet yet!" });
+            alert(res, 200, 7);
           }
         });
       }
     } else {
-      alert(res, 200, 6);
+      alert(res, 401, 6);
     }
   });
 

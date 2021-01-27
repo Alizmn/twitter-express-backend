@@ -40,6 +40,7 @@ module.exports = () => {
       "Username already in use",
       "Created successfully",
       "Please log in to see your tweets",
+      "No tweet yet!",
     ];
     if (data && (message || message === 0)) {
       return response.status(statusCode).json({ msg: msg[message], ...data });
