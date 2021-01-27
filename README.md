@@ -32,6 +32,7 @@ It's just a backend with a well-formed and expandable API. The API adheres to RE
   -index            <---|
   -signin           <---|-- api routes
   -signup           <---|
+  -tweet            <---|
 ```
 
 ## SETUP
