@@ -142,24 +142,24 @@ The token, should be provided in the header, as an `Authorization` attribute in 
   }
   ```
 
-  - `POST: /api/tweet/new`<br/>
-    This api is responsible for adding new tweet. You should be logged in and send request as follow:
+**_`POST: /api/tweet/new`_**<br/>
+This api is responsible for adding new tweet. You should be logged in and send request as follow:
 
-  ```javascript
-  {
-  "tweet": "very nice tweet"
-  }
-  ```
+```javascript
+{
+"tweet": "very nice tweet"
+}
+```
 
-  Then if the request is successful you would recieve a response as follow:
+Then if the request is successful you would recieve a response as follow:
 
-  ```javascript
-  {
-  "id": 6,
-  "tweet": "very nice tweet",
-  "edited": false
-  }
-  ```
+```javascript
+{
+"id": 6,
+"tweet": "very nice tweet",
+"edited": false
+}
+```
 
 ## FEATURES
 
@@ -167,4 +167,4 @@ The token, should be provided in the header, as an `Authorization` attribute in 
 ✔️ User login (Including session maintenance by jwt)</br>
 ✔️ Unit tests</br>
 ✔️ Read tweets</br>
-✔️ Create new tweets</br>
+✔️ Create new tweet</br>
