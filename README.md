@@ -78,12 +78,13 @@ cp .env.example .env
   !["Screenshot of tests"](https://github.com/alizmn/twitter-express-backend/blob/master/image/testing.png?raw=true)
 - Everytime you run the test, it would reset the test database
 
-### ROUTES
+## ROUTES
 
 Active routes:
 
-- `POST: /api/signup`<br/>
-  Sign up is for registering new user and accept an object with username and password. For example:
+### `POST: /api/signup`
+
+Sign up is for registering new user and accept an object with username and password. For example:
 
 ```javascript
 {
