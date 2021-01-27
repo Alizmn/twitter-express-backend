@@ -41,6 +41,8 @@ module.exports = () => {
       "Created successfully",
       "Please log in to see your tweets",
       "No tweet yet!",
+      "Please enter valid tweet",
+      "PLease log in to create a new tweet",
     ];
     if (data && (message || message === 0)) {
       return response.status(statusCode).json({ msg: msg[message], ...data });

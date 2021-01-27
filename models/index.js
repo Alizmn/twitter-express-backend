@@ -44,10 +44,36 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
+  const addTweetById = (tweet, user_id) => {
+    const query = {
+      text: `INSERT INTO tweets (tweet, user_id) VALUES ($1, $2) RETURNING id, tweet, edited`,
+      values: [tweet, user_id],
+    };
+
+    return db
+      .query(query)
+      .then((result) => result.rows[0])
+      .catch((err) => err);
+  };
+
+  const getIdByUsername = (username) => {
+    const query = {
+      text: `SELECT id FROM users WHERE LOWER(username) = LOWER($1)`,
+      values: [username],
+    };
+
+    return db
+      .query(query)
+      .then((result) => result.rows[0].id)
+      .catch((err) => err);
+  };
+
   return {
     getUsers,
     getByUsername,
     getTweetsByUsername,
     addUser,
+    addTweetById,
+    getIdByUsername,
   };
 };
