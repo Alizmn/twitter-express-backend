@@ -4,7 +4,7 @@ require("dotenv").config();
 
 /* GET home page. */
 module.exports = ({ jwtDecode, alert, getIdByUsername, addTweetById }) => {
-  router.post("/new", async function (req, res) {
+  router.post("/", async function (req, res) {
     if (req.header("Authorization")) {
       const verifyInfo = await jwtDecode(req);
       if (verifyInfo.err) {

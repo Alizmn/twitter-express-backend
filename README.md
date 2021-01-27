@@ -146,7 +146,7 @@ If you are logged in (for logging in you need to have the token in your header, 
 }
 ```
 
-### `POST: /api/tweet/new`<br/>
+### `POST: /api/tweets`<br/>
 
 This api is responsible for adding new tweet. You should be logged in and send request as follow:
 

@@ -14,7 +14,7 @@ const dataHelpers = require("./routes/dataHelpers")();
 const indexRouter = require("./routes/index");
 const signupRouter = require("./routes/signup");
 const signinRouter = require("./routes/signin");
-const tweetRouter = require("./routes/tweet");
+const tweetsRouter = require("./routes/tweets");
 
 const app = express();
 
@@ -27,6 +27,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", indexRouter({ ...dbHelpers, ...dataHelpers }));
 app.use("/api/signup", signupRouter({ ...dbHelpers, ...dataHelpers }));
 app.use("/api/signin", signinRouter({ ...dbHelpers, ...dataHelpers }));
-app.use("/api/tweet", tweetRouter({ ...dbHelpers, ...dataHelpers }));
+app.use("/api/tweets", tweetsRouter({ ...dbHelpers, ...dataHelpers }));
 
 module.exports = app;
